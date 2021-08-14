@@ -1,6 +1,8 @@
 pipeline {
+    environment {
+      MVN_HOME = tool name: 'Maven3', type: 'maven'
+   }
     agent any 
-    def MVN_HOME = tool name: 'Maven3', type: 'maven'
     stages {
         stage('SCM Checkout') {
             steps {
