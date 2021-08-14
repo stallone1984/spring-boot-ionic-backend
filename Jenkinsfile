@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Compile-Package') {
             steps {
-                sh "${MVN_HOME}/bin/mvn package"
+                sh "${MVN_HOME}\bin\mvn package"
             }
         }
     }
