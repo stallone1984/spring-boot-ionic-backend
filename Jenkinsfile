@@ -1,5 +1,6 @@
 pipeline {
     agent any 
+    def MVN_HOME = tool name: 'Maven3', type: 'maven'
     stages {
         stage('SCM Checkout') {
             steps {
@@ -7,7 +8,6 @@ pipeline {
             }
         }
         stage('Compile-Package') {
-            def MVN_HOME = tool name: 'Maven3', type: 'maven'
             steps {
                 sh "${MVN_HOME}/bin/mvn package"
             }
